@@ -12,6 +12,8 @@ namespace FanControl.DellPlugin
         private bool _dellInitialized;
         private FileInfo _copiedSysFile;
 
+        public string Name => "Dell";
+
         public void Close()
         {
             if (_dellInitialized)
