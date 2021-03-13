@@ -4,4 +4,4 @@ Plugin for [FanControl](https://github.com/Rem0o/FanControl.Releases) that provi
 
 ## To install
 
-Compile the solution copy the bin/release content into FanControl's "plugins" folder.
+Compile the solution and copy the bin/release content into FanControl's "plugins" folder.
