@@ -53,17 +53,21 @@
     <Compile Include="DellFanManagementFanSensor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Dlls\bzh_dell_smm_io_x64.sys">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="Dlls\bzh_dell_smm_io_x64.sys">
+		<Link>bzh_dell_smm_io_x64.sys</Link>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dlls\DellFanLib.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<Link>DellFanLib.dll</Link>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Dlls\DellFanLibInterop.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<Link>DellFanLibInterop.dll</Link>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
