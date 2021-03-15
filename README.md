@@ -4,4 +4,8 @@ Plugin for [FanControl](https://github.com/Rem0o/FanControl.Releases) that provi
 
 ## To install
 
-Compile the solution and copy the bin/release content into FanControl's "plugins" folder.
+Either
+* Download the latest binaries from [AppVeyor](https://ci.appveyor.com/project/Rem0o/fancontrol-dellplugin/branch/master/artifacts)
+* Compile the solution.
+
+and copy the bin/release content into FanControl's "plugins" folder.
