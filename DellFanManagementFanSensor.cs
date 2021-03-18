@@ -7,10 +7,7 @@ namespace FanControl.DellPlugin
     {
         private readonly FanIndex _fanIndex;
 
-        public DellFanManagementFanSensor(FanIndex fanIndex)
-        {
-            _fanIndex = fanIndex;
-        }
+        public DellFanManagementFanSensor(FanIndex fanIndex) => _fanIndex = fanIndex;
 
         public string Identifier => $"Dell/FanSensor/{(int)_fanIndex}";
 
@@ -20,9 +17,6 @@ namespace FanControl.DellPlugin
 
         public string Origin => $"DellFanLib {DellFanLib.Version}";
 
-        public void Update()
-        {
-            Value = DellFanLib.GetFanRpm(_fanIndex);
-        }
+        public void Update() => Value = DellFanLib.GetFanRpm(_fanIndex);
     }
 }

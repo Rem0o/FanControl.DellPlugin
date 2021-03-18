@@ -42,9 +42,9 @@ namespace FanControl.DellPlugin
 
         private FanLevel GetFanLevel(float val)
         {
-            if (val < 1)
+            if (val < 33.33)
                 return FanLevel.Level0;
-            else if (val < 100)
+            else if (val < 66.66)
                 return FanLevel.Level1;
             else
                 return FanLevel.Level2;
