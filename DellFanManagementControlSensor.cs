@@ -11,13 +11,13 @@ namespace FanControl.DellPlugin
 
         public DellFanManagementControlSensor(FanIndex fanIndex) => _fanIndex = fanIndex;
 
-        public string Identifier => $"Dell/Control/{(int)_fanIndex}";
-
         public float? Value { get; private set; }
 
         public string Name => $"Dell Control {(int)_fanIndex + 1}";
 
         public string Origin => $"DellFanLib {DellFanLib.Version}";
+
+        public string Id => "Control_" + _fanIndex.ToString();
 
         public void Reset()
         {

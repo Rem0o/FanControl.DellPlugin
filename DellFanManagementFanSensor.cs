@@ -17,6 +17,8 @@ namespace FanControl.DellPlugin
 
         public string Origin => $"DellFanLib {DellFanLib.Version}";
 
+        public string Id => "Fan_" + _fanIndex.ToString();
+
         public void Update() => Value = DellFanLib.GetFanRpm(_fanIndex);
     }
 }
