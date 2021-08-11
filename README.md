@@ -9,3 +9,15 @@ Either
 * Compile the solution.
 
 and copy the bin/release content into FanControl's "plugins" folder.
+
+## Special note
+
+Setting this registry key might be required on your machine, see <br>
+* http://forum.notebookreview.com/threads/dellfanmanagement-dellfankeepalive-%E2%80%93-tools-for-managing-the-fan-speed-in-dell-laptops.833340/ 
+* https://www.geoffchappell.com/notes/security/whqlsettings/index.htm
+
+```
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy]
+"UpgradedSystem"=dword:00000000
+```
+
