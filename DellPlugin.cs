@@ -1,10 +1,9 @@
-﻿using DellFanManagement.Interop;
-using FanControl.Plugins;
+﻿using FanControl.Plugins;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using DellFanManagement.DellSmbiozBzhLib;
 
 namespace FanControl.DellPlugin
 {
@@ -21,9 +20,9 @@ namespace FanControl.DellPlugin
         {
             if (_dellInitialized)
             {
-                DellFanLib.EnableEcFanControl(false);
-                DellFanLib.EnableEcFanControl(true);
-                DellFanLib.Shutdown();
+                DellSmbiosBzh.EnableAutomaticFanControl(true);
+                DellSmbiosBzh.EnableAutomaticFanControl(false);
+                DellSmbiosBzh.Shutdown();
 
                 _copiedSysFile.Delete();
                 _copiedSysFile = null;
@@ -37,10 +36,10 @@ namespace FanControl.DellPlugin
             if (File.Exists(copyLocation))
                 File.Delete(copyLocation);
 
-            FileInfo sysFile = new FileInfo(typeof(DellFanLib).Assembly.Location).Directory.GetFiles(SYS_FILE).FirstOrDefault();
+            FileInfo sysFile = new FileInfo(typeof(DellSmbiosBzh).Assembly.Location).Directory.GetFiles(SYS_FILE).FirstOrDefault();
             _copiedSysFile = sysFile.CopyTo(copyLocation, true);
 
-            _dellInitialized = DellFanLib.Initialize();
+            _dellInitialized = DellSmbiosBzh.Initialize();
 
         }
 
@@ -49,13 +48,13 @@ namespace FanControl.DellPlugin
             if (_dellInitialized)
             {
                 IEnumerable<DellFanManagementControlSensor> fanControls = new[] {
-                            FanIndex.Fan1,
-                            FanIndex.Fan2
+                            BzhFanIndex.Fan1,
+                            BzhFanIndex.Fan2
                         }.Select(i => new DellFanManagementControlSensor(i)).ToArray();
 
                 IEnumerable<DellFanManagementFanSensor> fanSensors = new[] {
-                            FanIndex.Fan1,
-                            FanIndex.Fan2
+                            BzhFanIndex.Fan1,
+                            BzhFanIndex.Fan2
                         }.Select(i => new DellFanManagementFanSensor(i)).ToArray();
 
                 _container.ControlSensors.AddRange(fanControls);

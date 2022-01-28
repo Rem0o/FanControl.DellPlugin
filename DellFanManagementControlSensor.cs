@@ -1,27 +1,27 @@
-﻿using DellFanManagement.Interop;
+﻿using DellFanManagement.DellSmbiozBzhLib;
 using FanControl.Plugins;
 
 namespace FanControl.DellPlugin
 {
     public class DellFanManagementControlSensor: IPluginControlSensor
     {
-        private readonly FanIndex _fanIndex;
+        private readonly BzhFanIndex _fanIndex;
         private bool _isSet = false;
         private float? _val;
 
-        public DellFanManagementControlSensor(FanIndex fanIndex) => _fanIndex = fanIndex;
+        public DellFanManagementControlSensor(BzhFanIndex fanIndex) => _fanIndex = fanIndex;
 
         public float? Value { get; private set; }
 
         public string Name => $"Dell Control {(int)_fanIndex + 1}";
 
-        public string Origin => $"DellFanLib {DellFanLib.Version}";
+        public string Origin => $"DellSmbiosBzh";
 
         public string Id => "Control_" + _fanIndex.ToString();
 
         public void Reset()
         {
-            DellFanLib.EnableEcFanControl(_fanIndex == FanIndex.Fan1 ? false : true);
+            DellSmbiosBzh.EnableAutomaticFanControl(_fanIndex == BzhFanIndex.Fan1 ? false : true);
             _isSet = false;
         }
 
@@ -29,25 +29,25 @@ namespace FanControl.DellPlugin
         {
             if (!_isSet)
             {
-                DellFanLib.DisableEcFanControl(_fanIndex == FanIndex.Fan1 ? false : true);
+                DellSmbiosBzh.DisableAutomaticFanControl(_fanIndex == BzhFanIndex.Fan1 ? false : true);
                 _isSet = true;
             }
 
             _val = val;
-            FanLevel fanLevel = GetFanLevel(val);
-            DellFanLib.SetFanLevel(_fanIndex, fanLevel);
+            BzhFanLevel fanLevel = GetFanLevel(val);
+            DellSmbiosBzh.SetFanLevel(_fanIndex, fanLevel);
         }
 
         public void Update() => Value = _val;
 
-        private FanLevel GetFanLevel(float val)
+        private BzhFanLevel GetFanLevel(float val)
         {
             if (val < 33.33)
-                return FanLevel.Level0;
+                return BzhFanLevel.Level0;
             else if (val < 66.66)
-                return FanLevel.Level1;
+                return BzhFanLevel.Level1;
             else
-                return FanLevel.Level2;
+                return BzhFanLevel.Level2;
         }
     }
 }

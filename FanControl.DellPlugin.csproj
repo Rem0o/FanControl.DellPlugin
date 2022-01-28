@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DellFanLibInterop">
-      <HintPath>.\DellFanLibInterop.dll</HintPath>
+    <Reference Include="DellSmbiosBzhLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\DellSmbiosBzhLib.dll</HintPath>
     </Reference>
     <Reference Include="FanControl.Plugins, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -54,27 +55,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dlls\bzh_dell_smm_io_x64.sys" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Dlls\bzh_dell_smm_io_x64.sys">
       <Link>bzh_dell_smm_io_x64.sys</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Dlls\DellFanLibInterop.dll" />
+    <Content Include="Dlls\DellSmbiosBzhLib.dll" />
     <Content Include="Dlls\FanControl.Plugins.dll" />
     <Content Include="Dlls\FanControl.Plugins.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dlls\DellFanLib.dll">
-      <Link>DellFanLib.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Dlls\DellFanLib.dll" />
-    <Content Include="Dlls\DellFanLibInterop.dll">
-      <Link>DellFanLibInterop.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
