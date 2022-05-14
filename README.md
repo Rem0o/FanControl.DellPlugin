@@ -8,7 +8,8 @@ Either
 * Download the latest binaries from [AppVeyor](https://ci.appveyor.com/project/Rem0o/fancontrol-dellplugin/branch/master/artifacts)
 * Compile the solution.
 
-and copy the bin/release content into FanControl's "plugins" folder.
+and copy FanControl.DellPlugin.dll into FanControl's "plugins" folder.
+You might need to "unlock" the dll in its properties.
 
 ## Special note
 
