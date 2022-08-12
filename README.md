@@ -6,6 +6,7 @@ Plugin for [FanControl](https://github.com/Rem0o/FanControl.Releases) that provi
 
 Either
 * Download the latest binaries from [AppVeyor](https://ci.appveyor.com/project/Rem0o/fancontrol-dellplugin/branch/master/artifacts)
+* Download the latest [release](https://github.com/Rem0o/FanControl.DellPlugin/releases)
 * Compile the solution.
 
 and copy FanControl.DellPlugin.dll into FanControl's "plugins" folder.
