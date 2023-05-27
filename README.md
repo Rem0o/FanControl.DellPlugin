@@ -15,7 +15,7 @@ You might need to "unlock" the dll in its properties.
 ## Special note
 
 Setting this registry key might be required on your machine, with a reboot, see <br>
-* http://forum.notebookreview.com/threads/dellfanmanagement-dellfankeepalive-%E2%80%93-tools-for-managing-the-fan-speed-in-dell-laptops.833340/ 
+* [http://forum.notebookreview.com/threads/dellfanmanagement-dellfankeepalive-%E2%80%93-tools-for-managing-the-fan-speed-in-dell-laptops.833340/ ](https://web.archive.org/web/20211121044820/http://forum.notebookreview.com/threads/dellfanmanagement-dellfankeepalive-%E2%80%93-tools-for-managing-the-fan-speed-in-dell-laptops.833340/)
 * https://www.geoffchappell.com/notes/security/whqlsettings/index.htm
 
 ```
