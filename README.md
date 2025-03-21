@@ -4,13 +4,13 @@ Plugin for [FanControl](https://github.com/Rem0o/FanControl.Releases) that provi
 
 ## To install
 
-Either
+Do one of the following:
 * Download the latest binaries from [AppVeyor](https://ci.appveyor.com/project/Rem0o/fancontrol-dellplugin/branch/master/artifacts)
 * Download the latest [release](https://github.com/Rem0o/FanControl.DellPlugin/releases)
 * Compile the solution.
 
-and copy FanControl.DellPlugin.dll into FanControl's "plugins" folder.
-You might need to "unlock" the dll in its properties.
+* And use the "install plugin" button in FanControl or copy all the content of the plugin's zip into FanControl's "plugins" folder.
+You might need to "unlock" the plugin dll in their properties.
 
 ## Special note
 
